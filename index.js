@@ -7,7 +7,7 @@ const dotenv = require("dotenv")
 const cors = require('cors');
 const morgan = require('morgan');
 
-const env = dotenv.config()
+dotenv.config()
  
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({ extended:true }));
@@ -23,9 +23,9 @@ app.get("/",(req,res)=>{
 
 app.use('/',app_server)
 
-const port=5000
-app.listen(port,()=>{
-    console.log(`Server Connected to ${port}`)
+const PORT=process.env.PORT
+app.listen(PORT,()=>{
+    console.log(`Server Connected to ${PORT}`)
 })
 
 
