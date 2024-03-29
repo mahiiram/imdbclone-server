@@ -15,7 +15,7 @@ const review_schema =new mongoose.Schema({
     user:{
         type:mongoose.Schema.ObjectId,
         ref:"user",
-        default:[]    
+        default:[]      
     }
 },{
     timestamps:true,
