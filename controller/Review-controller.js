@@ -84,10 +84,10 @@ review_router.delete("/delete/:id",async (req,res,next)=>{
         review = await reviewmodel.findByIdAndRemove(id).populate('user movie');
         const session = await mongoose.startSession();
         session.startTransaction();
-        await booking.user.bookings.pull(review); 
-        await booking.movie.bookings.pull(review)
-        await booking.movie.save({session});
-        await booking.user.save({session});
+        await review.user.reviews.pull(review); 
+        await review.movie.reviews.pull(review)
+        await review.movie.save({session});
+        await review.user.save({session});
         session.commitTransaction();
      }catch(err){
         return console.log(err)
