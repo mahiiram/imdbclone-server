@@ -8,8 +8,9 @@ const cors = require('cors');
 const morgan = require('morgan');
 
 const env = dotenv.config()
-
-
+ 
+app.use(bodyparser.json());
+app.use(bodyparser.urlencoded({ extended:true }));
 app.use(express.json())
 app.use(cors({origin:true,credentials:true}))
 
