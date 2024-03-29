@@ -15,6 +15,22 @@ const Movie_schema =new mongoose.Schema({
             type:String,
         }
     }],
+    producers:[{
+        name:{
+        type:String,
+        },
+        producerimage:{
+            type:String,
+        }
+    }],
+    director:[{
+        name:{
+        type:String,
+        },
+        directorimage:{
+            type:String,
+        }
+    }],
     description:{
         type: String,
         required: true
@@ -26,6 +42,10 @@ const Movie_schema =new mongoose.Schema({
     posterurl:{
         type: String,
         required: true
+    },
+    genre:{
+        type:String,
+        required:true
     },
     featured:{
         type: Boolean,

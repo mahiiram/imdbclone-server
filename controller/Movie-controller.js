@@ -40,7 +40,10 @@ movie_router.post('/create',async (req, res, next)=> {  //localhost:5000/movie/c
             releasedate,
             posterurl,
             featured,
-            actors
+            actors,
+            producers,
+            director,
+            genre
         } = req.body;
         if(!title &&title.trim()==="" &&
         !description&&description.trim()==="" &&
@@ -59,6 +62,9 @@ movie_router.post('/create',async (req, res, next)=> {  //localhost:5000/movie/c
             posterurl,
             featured,
             actors,
+            producers,
+            director,
+            genre,
             admin:userId
         });
          const session = await mongoose.startSession();
@@ -83,7 +89,7 @@ movie_router.get('/:id',async(req,res,next)=>{
     let id = req.params.id;
     let movies;
     try {
-        movies = await Moviemodel.findById(id).populate().lean()
+        movies = await Moviemodel.findById(id).populate('reviews')
     } catch (err) { 
         return next(err)
     }

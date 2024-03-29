@@ -10,7 +10,8 @@ const review_schema =new mongoose.Schema({
     },
     review:{
         type: String,
-        required: true
+        required: true,
+        default:[]
     },
     user:{
         type:mongoose.Schema.ObjectId,

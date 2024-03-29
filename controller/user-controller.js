@@ -154,7 +154,7 @@ user_router.get("/getusersreview/:id",async (req,res,next)=>{
         return console.log(err)
      }
      if(!reviews){
-        return res.status(500).json({message:"unable to get booking"})
+        return res.status(500).json({message:"unable to get review"})
 
      }
      return res.status(201).json({reviews})
