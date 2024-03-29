@@ -45,7 +45,6 @@ const Movie_schema =new mongoose.Schema({
     },
     genre:{
         type:String,
-        required:true
     },
     featured:{
         type: Boolean,

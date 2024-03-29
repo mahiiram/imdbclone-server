@@ -81,7 +81,7 @@ review_router.delete("/delete/:id",async (req,res,next)=>{
     const id = req.params.id;
      let review;
      try{
-        review = await reviewmodel.findByIdAndRemove(id).populate('user movie');
+        review = await reviewmodel.findByIdAndDelete(id).populate('user movie');
         const session = await mongoose.startSession();
         session.startTransaction();
         await review.user.reviews.pull(review); 
