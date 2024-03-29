@@ -11,15 +11,15 @@ const Movie_schema =new mongoose.Schema({
         name:{
         type:String,
         },
-        actorimage:{
+        image:{
             type:String,
         }
     }],
-    producers:[{
+    producers:[{ 
         name:{
         type:String,
         },
-        producerimage:{
+        image:{
             type:String,
         }
     }],
@@ -27,7 +27,7 @@ const Movie_schema =new mongoose.Schema({
         name:{
         type:String,
         },
-        directorimage:{
+        image:{
             type:String,
         }
     }],
