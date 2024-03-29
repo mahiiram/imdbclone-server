@@ -21,7 +21,7 @@ app.get("/",(req,res)=>{
     console.log("Home Request Server Running Perfectly")
 })
 
-app.use('/',app_server)
+app.use('/api',app_server)
 
 const PORT=process.env.PORT
 app.listen(PORT,()=>{
